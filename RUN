@@ -1,11 +1,13 @@
 Terminal A — Doosan MoveIt bringup 실행 (예: e0509)
+
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
-
 ros2 launch dsr_bringup2 dsr_bringup2_moveit.launch.py model:=e0509
 
+
+
 Terminal B — GUI 실행
+
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
-
 ros2 run doosan_moveit_guiP0V0.5
