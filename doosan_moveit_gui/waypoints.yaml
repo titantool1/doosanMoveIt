@@ -1,0 +1,24 @@
+# frame은 보통 world 추천 (너 /tf_static에 world->base_link 고정 있음)
+# rpy를 주면 IK가 훨씬 안정적으로 “원하는 자세”로 잡힘 (너가 방금 확인했듯이)
+
+defaults:
+  frame: world
+  rpy: [0.0, 0.0, 0.0]   # roll, pitch, yaw
+  dwell: 0.2            # 각 포인트 도착 후 대기(초)
+
+sequence:
+  - name: A
+    abs: {x: 0.10, y: 0.00, z: 1.08}
+
+  - name: B
+    abs: {x: 0.10, y: 0.10, z: 1.08}
+
+  - name: C
+    rel: {dx: 0.00, dy: 0.00, dz: -0.02}
+
+  - name: BackToB
+    abs: {x: 0.10, y: 0.10, z: 1.08}
+
+  - name: BackToA
+    abs: {x: 0.10, y: 0.00, z: 1.08}
+    

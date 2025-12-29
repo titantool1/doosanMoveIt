@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>doosan_moveit_gui</name>
+  <version>0.0.1</version>
+  <description>PyQt5 GUI to control Doosan robot via MoveIt2 (waypoints, plan/exec).</description>
+
+  <maintainer email="rnfnrnfn9999@google.com">you</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- 런타임에서 필요한 것들: 상황에 맞게 추가/삭제 가능 -->
+  <!-- Python runtime -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+
+  <!-- GUI -->
+  <exec_depend>python3-pyqt5</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+
+  <!-- ROS msgs/srvs used in gui_app.py -->
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>moveit_msgs</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+  <exec_depend>builtin_interfaces</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
