@@ -56,24 +56,25 @@ sudo apt-get install -y \
   ros-humble-tf2-ros \
   ros-humble-robot-state-publisher \
   ros-humble-xacro
+
+
 3) Dev Tools (빌드/의존성)
-bash
-코드 복사
 sudo apt-get update
 sudo apt-get install -y \
   python3-colcon-common-extensions \
   python3-rosdep \
   git
+
+
 4) XRDP/가상환경에서 RViz가 느리거나 안 뜰 때(권장)
-bash
-코드 복사
 sudo apt-get update
 sudo apt-get install -y \
   mesa-utils \
   libgl1-mesa-dri
 Build (colcon)
-bash
-코드 복사
+
+
+5) rosdep, 빌드
 cd ~/ros2_ws_test
 # src/ 아래에 이 레포(doosan_moveit_gui)가 들어있다고 가정
 rosdep update
@@ -82,20 +83,22 @@ rosdep install --from-paths src --ignore-src -r -y
 colcon build --packages-select doosan_moveit_gui
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws_test/install/setup.bash
+
+
+
+
 Run
+
+
 Terminal A — Doosan MoveIt bringup (예: e0509)
-bash
-코드 복사
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws_test/install/setup.bash
-
 ros2 launch dsr_bringup2 dsr_bringup2_moveit.launch.py model:=e0509
+
+
 Terminal B — GUI 실행
-bash
-코드 복사
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws_test/install/setup.bash
-
 ros2 run doosan_moveit_gui gui_app
 
 
